@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>click-enlarge</title>
+
+    <style>
+        .click-area {
+            position: relative;
+
+            background-color: lightgray;
+        }
+
+        .click-area a::after {
+            inset: 0;
+            content: "";
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus accusantium deserunt distinctio dolores doloribus eligendi fugit incidunt ipsum labore odio odit perferendis porro quibusdam ratione reiciendis sapiente, tempora, vitae.
+    <div class="click-area">
+        <p>
+            beschreibender Text
+        </p>
+        <a href="https://www.google.de">Beispiel-Seite</a>
+    </div>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, debitis, illum. Dolorum eaque earum illo iure officiis quia quidem, unde veniam. A, laboriosam, necessitatibus? Consectetur iste magnam officia suscipit velit.
+</body>
+</html>
