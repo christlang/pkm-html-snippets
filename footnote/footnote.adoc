@@ -1,0 +1,3 @@
+
+
+Ich möchte eine Fußnote, die den umgebenden Text nicht beeinflusst (also nicht den Zeilenabstand vergrößert)
