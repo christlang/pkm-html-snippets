@@ -4,18 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>footnote</title>
+    <style>
+        .text {
+            line-height: 1.6;
+        }
+        .footnote-ref {
+            line-height: 1;
+            white-space: nowrap;
+            vertical-align: super;
+        }
+    </style>
 </head>
 <body>
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores laborum placeat quam? Consequatur enim ipsam maxime
-nesciunt quis, sed sint. Accusantium culpa[1] laborum libero officia provident. Architecto beatae consequatur ducimus, et
-facilis inventore laboriosam, libero molestias nostrum perferendis perspiciatis porro quae quam rem voluptates.
-Doloribus eos nesciunt rem? Accusamus autem blanditiis corporis cumque eligendi error[2], esse et explicabo fuga harum
-illo itaque laudantium maxime minus molestiae mollitia natus nisi obcaecati omnis provident quas repellat, repellendus,
-tempore totam veniam voluptas voluptatum?
-
+<p class="text">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores laborum placeat quam? Consequatur enim ipsam maxime
+    nesciunt quis, sed sint. Accusantium culpa<a class="footnote-ref" href="#footnote-1">[1]</a><a id="footnote-1-back"></a>
+    laborum libero officia provident. Architecto beatae consequatur ducimus, et
+    facilis inventore laboriosam, libero molestias nostrum perferendis perspiciatis porro quae quam rem voluptates.
+    Doloribus eos nesciunt rem? Accusamus autem blanditiis corporis cumque eligendi error
+    <a class="footnote-ref" href="#footnote-2">[2]</a><a id="footnote-2-back"></a>, esse et explicabo fuga harum
+    illo itaque laudantium maxime minus molestiae mollitia natus nisi obcaecati omnis provident quas repellat, repellendus,
+    tempore totam veniam voluptas voluptatum?
+</p>
+<p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores laborum placeat quam? Consequatur enim ipsam maxime
+    nesciunt quis, sed sint. Accusantium culpa laborum libero officia provident. Architecto beatae consequatur ducimus, et
+    facilis inventore laboriosam, libero molestias nostrum perferendis perspiciatis porro quae quam rem voluptates.
+    Doloribus eos nesciunt rem? Accusamus autem blanditiis corporis cumque eligendi error, esse et explicabo fuga harum
+    illo itaque laudantium maxime minus molestiae mollitia natus nisi obcaecati omnis provident quas repellat, repellendus,
+    tempore totam veniam voluptas voluptatum?
+</p>
+<p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores laborum placeat quam? Consequatur enim ipsam maxime
+    nesciunt quis, sed sint. Accusantium culpa laborum libero officia provident. Architecto beatae consequatur ducimus, et
+    facilis inventore laboriosam, libero molestias nostrum perferendis perspiciatis porro quae quam rem voluptates.
+    Doloribus eos nesciunt rem? Accusamus autem blanditiis corporis cumque eligendi error, esse et explicabo fuga harum
+    illo itaque laudantium maxime minus molestiae mollitia natus nisi obcaecati omnis provident quas repellat, repellendus,
+    tempore totam veniam voluptas voluptatum?
+</p>
 <ul>
-    <li>[1] culpa - ist ein Wort, dass ich auch kenne....</li>
-    <li>[2] error - Fehler macht man immer wieder</li>
+    <li><a id="footnote-1">[1] culpa - ist ein Wort, dass ich auch kenne....</a> <a href="#footnote-1-back">back</a></li>
+    <li><a id="footnote-2">[2] error - Fehler macht man immer wieder...</a> <a href="#footnote-2-back">back</a></li>
 </ul>
 </body>
 </html>
