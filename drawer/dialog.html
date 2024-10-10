@@ -7,39 +7,78 @@
 
     <style>
         ::backdrop {
-            background-image: linear-gradient(
-                    45deg,
-                    magenta,
-                    rebeccapurple,
-                    dodgerblue,
-                    green
-            );
             opacity: 0.75;
+        }
+
+        .dialog {
+            height: 70vh;
+            width: 100vw;
+            top: 0;
+
         }
     </style>
 </head>
 <body>
-<dialog>
+<p>
+    Problem 1: es gibt 2 Scrollbalken wenn der Dialog auch einen hat und wenn man unten im Dialog angekommen ist dann wird weiter gescroolt
+</p>
+
+<p>
+    fixed: Problem 2: öffnen und schließen von mehreren Dialogen muss man sich selbst drum kümmern
+</p>
+
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquid architecto aspernatur beatae dolorum ducimus eos expedita facere facilis fugiat illum ipsam laudantium minima, optio quam quasi sit totam ut.</p>
+<dialog id="dialog_1" class="dialog">
     <button autofocus>Close</button>
     <p>This modal dialog has a groovy backdrop!</p>
+    <p>This modal dialog has a groovy backdrop!</p>
+    <p>This modal dialog has a groovy backdrop!</p>
+    <p>This modal dialog has a groovy backdrop!</p>
+    <p>This modal dialog has a groovy backdrop!</p>
+    <p>This modal dialog has a groovy backdrop!</p>
+    <p>This modal dialog has a groovy backdrop!</p>
+    <p>This modal dialog has a groovy backdrop!</p>
+    <p>This modal dialog has a groovy backdrop!</p>
+    <p>This modal dialog has a groovy backdrop!</p>
+    <p>This modal dialog has a groovy backdrop!</p>
+    <p>This modal dialog has a groovy backdrop!</p>
 </dialog>
-<button>Show the dialog</button>
+<button id="dialog_1_button">Show the dialog</button>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi architecto commodi distinctio, esse fuga id ipsum modi nemo quo repudiandae rerum saepe veritatis, voluptas. Eveniet molestias odio praesentium rem voluptatibus.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi architecto commodi distinctio, esse fuga id ipsum modi nemo quo repudiandae rerum saepe veritatis, voluptas. Eveniet molestias odio praesentium rem voluptatibus.</p>
+
+
+<dialog id="dialog_2" class="dialog">
+    <button autofocus>Close</button>
+    <p>small</p>
+</dialog>
+<button id="dialog_2_button">Show small dialog</button>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi architecto commodi distinctio, esse fuga id ipsum modi nemo quo repudiandae rerum saepe veritatis, voluptas. Eveniet molestias odio praesentium rem voluptatibus.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi architecto commodi distinctio, esse fuga id ipsum modi nemo quo repudiandae rerum saepe veritatis, voluptas. Eveniet molestias odio praesentium rem voluptatibus.</p>
 
 
 <script>
-    const dialog = document.querySelector("dialog");
-    const showButton = document.querySelector("dialog + button");
-    const closeButton = document.querySelector("dialog button");
 
-    // "Show the dialog" button opens the dialog modally
-    showButton.addEventListener("click", () => {
-        dialog.showModal();
-    });
+    function connectDialog(id) {
+        const dialog = document.querySelector(id);
+        const showButton = document.querySelector(`${id} + button`);
+        const closeButton = document.querySelector(`${id} button`);
 
-    // "Close" button closes the dialog
-    closeButton.addEventListener("click", () => {
-        dialog.close();
-    });
+        // "Show the dialog" button opens the dialog modally
+        showButton.addEventListener("click", () => {
+            dialog.showModal();
+        });
+
+        // "Close" button closes the dialog
+        closeButton.addEventListener("click", () => {
+            dialog.close();
+        });
+    }
+
+    connectDialog('#dialog_1');
+    connectDialog('#dialog_2');
+
 
 </script>
 </body>
