@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Breadcrumbs</title>
+    <style>
+        .breadcrumb-nav {
+
+        }
+        .breadcrumb-nav--list {
+            list-style: none;
+        }
+        .breadcrumb-nav--list-element {
+            display: inline-block;
+        }
+        .breadcrumb-nav--list-element::after {
+            content: " > ";
+        }
+        .breadcrumb-nav--list-element:last-child::after {
+            content: "";
+        }
+
+        .breadcrumb-nav--list-element-link {
+            font-weight: normal;
+            text-decoration: none;
+            color: gray;
+        }
+
+        .breadcrumb-nav--list-element-link__hover:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <nav class="breadcrumb-nav">
+        <ol class="breadcrumb-nav--list">
+            <li class="breadcrumb-nav--list-element"><a href="#" class="breadcrumb-nav--list-element-link breadcrumb-nav--list-element-link__hover ">Level 1</a></li>
+            <li class="breadcrumb-nav--list-element"><a href="#" class="breadcrumb-nav--list-element-link breadcrumb-nav--list-element-link__hover ">Level 2</a></li>
+            <li class="breadcrumb-nav--list-element"><a href="#" class="breadcrumb-nav--list-element-link breadcrumb-nav--list-element-link__hover ">Level 3</a></li>
+            <li class="breadcrumb-nav--list-element"><a href="#" class="breadcrumb-nav--list-element-link breadcrumb-nav--list-element-link__hover ">Level 4</a></li>
+            <li class="breadcrumb-nav--list-element">current</li>
+        </ol>
+    </nav>
+</div>
+</body>
+</html>
