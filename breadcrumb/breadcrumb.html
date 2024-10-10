@@ -5,20 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Breadcrumbs</title>
     <style>
-        .breadcrumb-nav {
-
-        }
         .breadcrumb-nav--list {
             list-style: none;
+            display: flex;
+            gap: 10px;
         }
         .breadcrumb-nav--list-element {
-            display: inline-block;
+
+        }
+        @media screen and (max-width: 400px) {
+            .breadcrumb-nav--list {
+                list-style: none;
+                display: flex;
+                gap: 0;
+
+            }
+            .breadcrumb-nav--list-element:nth-child(1)::after {
+                content: "> ... >";
+            }
+            .breadcrumb-nav--list-element:nth-child(2) {
+                width: 0;
+                height: 0;
+                visibility: hidden;
+            }
+            .breadcrumb-nav--list-element:nth-child(2)::after {
+                content: "";
+            }
+            .breadcrumb-nav--list-element:nth-child(3) {
+                width: 0;
+                height: 0;
+                visibility: hidden;
+            }
+            .breadcrumb-nav--list-element:nth-child(3)::after {
+                content: "";
+            }
+            .breadcrumb-nav--list-element:nth-child(4) {
+                width: 0;
+                height: 0;
+                visibility: hidden;
+                margin-left: 10px;
+            }
+            .breadcrumb-nav--list-element:nth-child(4)::after {
+                content: "";
+            }
+        }
+        .breadcrumb-nav--list-element:last-child {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            flex: 1 0 0;
+            text-wrap: nowrap;
         }
         .breadcrumb-nav--list-element::after {
-            content: " > ";
+            content: ">";
+            margin-left: 10px;
         }
         .breadcrumb-nav--list-element:last-child::after {
             content: "";
+
         }
 
         .breadcrumb-nav--list-element-link {
@@ -34,15 +77,19 @@
 </head>
 <body>
 <div>
+    <h1>Breadcrumbs</h1>
     <nav class="breadcrumb-nav">
         <ol class="breadcrumb-nav--list">
             <li class="breadcrumb-nav--list-element"><a href="#" class="breadcrumb-nav--list-element-link breadcrumb-nav--list-element-link__hover ">Level 1</a></li>
             <li class="breadcrumb-nav--list-element"><a href="#" class="breadcrumb-nav--list-element-link breadcrumb-nav--list-element-link__hover ">Level 2</a></li>
             <li class="breadcrumb-nav--list-element"><a href="#" class="breadcrumb-nav--list-element-link breadcrumb-nav--list-element-link__hover ">Level 3</a></li>
             <li class="breadcrumb-nav--list-element"><a href="#" class="breadcrumb-nav--list-element-link breadcrumb-nav--list-element-link__hover ">Level 4</a></li>
-            <li class="breadcrumb-nav--list-element">current</li>
+            <li class="breadcrumb-nav--list-element">current asdfasdf asfd asdf asdf asf</li>
         </ol>
     </nav>
+    <div>
+        Ausblenden von Leveln unter einer bestimmten Größte des Bildschirms.
+    </div>
 </div>
 </body>
 </html>
