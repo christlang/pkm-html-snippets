@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cards</title>
+    <style>
+        .cards {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .card {
+            padding: 1rem;
+            background-color: lightgrey;
+            width: 400px;
+            min-width: 400px;
+        }
+        .card__text {
+            height: 300px;
+            overflow-y: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <p>
+    Die Cards sollten alle die gleiche Höhe haben und den enthaltenen Text entsprechend abschneiden
+    </p>
+    <p>
+        Cards brauchen dann wohl feste Breite und etwas JavaScript.
+    </p>
+</div>
+<div class="cards">
+    <div class="card">
+        <p>Overline 1</p>
+        <p><a href="#link_1">Link 1</a></p>
+        <p class="card__text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet atque beatae deserunt dicta dolorem earum,
+            facere in maiores nemo officiis porro possimus quisquam quo, unde vel voluptas? Odit, voluptatem.
+        </p>
+        <p><a href="#bereich_1">Bereich 1</a></p>
+    </div>
+    <div class="card">
+        <p>Overline 2</p>
+        <p><a href="#link_2">Link 2</a></p>
+        <p class="card__text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, commodi eaque esse excepturi, nam odio,
+            omnis quam quasi quibusdam ratione rerum sit ut vel! Accusamus assumenda consequatur dolor earum, ex
+            exercitationem facere fugiat fugit ipsam itaque nostrum qui quisquam repellendus reprehenderit repudiandae rerum
+            sequi, similique? Ad atque commodi consequatur deserunt distinctio dolorem esse ex illo ipsa, ipsam molestias,
+            natus necessitatibus nesciunt numquam pariatur, perspiciatis possimus quasi quia rem reprehenderit tempora ut
+            velit? Eum fugit nemo nobis ratione recusandae rerum voluptatem voluptatibus? Corporis debitis impedit quis!
+            Deleniti deserunt, dignissimos dolore doloribus earum maxime natus nemo odio perferendis, sunt suscipit vel
+            velit, voluptatum? Ab accusamus doloremque perferendis quasi reprehenderit suscipit ullam! Dolore earum facere
+            nostrum repellat repudiandae temporibus voluptate. Accusamus aliquam amet animi cum distinctio, dolorem eveniet
+            ex facilis fuga id incidunt, magnam necessitatibus nesciunt ratione rem sapiente totam ut vel. Aut culpa
+            delectus eaque eius eos incidunt iste labore minima nihil, odio quae quia quidem quis reprehenderit, unde vitae
+            voluptatum! Adipisci amet atque corporis culpa distinctio esse eveniet ipsum, itaque iure nesciunt nulla
+            officiis omnis quam quasi quis repellat soluta. Alias aliquam cumque deserunt dolor dolore ea ex illo impedit
+            inventore iusto laudantium, maiores molestias possimus provident vero, voluptas voluptatibus. Aspernatur debitis
+            ea, magnam qui sint suscipit ullam! Ab delectus dignissimos ex explicabo facere id, nemo nobis, praesentium,
+            quam quidem rem reprehenderit soluta tempore unde ut? A adipisci aliquid, asperiores aut doloribus est fuga
+            labore nesciunt nisi nobis officiis quia sapiente sed sit suscipit veniam voluptatibus voluptatum! A accusantium
+            beatae dolorum eligendi eos error exercitationem explicabo harum id impedit, ipsa iusto mollitia nemo nihil nisi
+            obcaecati possimus praesentium quae quis repellat sapiente sequi ut. Aliquid dicta dignissimos dolor dolorem
+            incidunt soluta voluptatum? At blanditiis cupiditate, dolorem earum enim fugit, hic neque nostrum officia quae
+            repellendus tempore vel voluptatum! Aperiam eum fugit molestiae perspiciatis! Assumenda commodi dicta eligendi
+            eos error ex explicabo impedit in ipsa, ipsam labore laborum, nisi nobis quis quod! Adipisci culpa dignissimos
+            earum odio porro quam quasi quos repudiandae? Architecto cupiditate, doloribus et facilis fugit incidunt labore
+            neque nisi officia porro quas, sequi, tempora tempore? Ab accusantium aliquam, animi enim laboriosam officia
+            quae! Ab deserunt dolor, magni nulla porro quisquam quo ullam voluptatibus! Aliquam cupiditate debitis dolores
+            eos eum explicabo, fugiat incidunt iure laboriosam libero minima molestias nobis non numquam quis rem repellat
+            repellendus repudiandae, sed sint ullam ut, veniam? Accusantium, amet commodi error libero, magni numquam
+            repudiandae sed soluta veniam vitae voluptatem voluptatum. Accusamus, ad amet aut dolor doloribus eveniet fugiat
+            inventore, libero nam natus nesciunt nihil nobis quae qui quos ratione reiciendis repudiandae tempora ullam vel!
+            Ad consequuntur culpa cumque deserunt dolorem nihil possimus praesentium veritatis! Corporis esse,
+            exercitationem, fugiat illo iste molestias nobis, pariatur possimus quas reprehenderit sequi sit? Asperiores,
+            consequatur, eligendi eos fugiat fugit id iste labore libero minus nesciunt non omnis optio possimus. Ad
+            architecto aspernatur aut consequatur, cumque dolor dolore esse itaque iure laborum maiores, maxime obcaecati
+            reiciendis repellendus sapiente suscipit vitae! Autem facere necessitatibus nobis provident, sapiente sed sint
+            veniam vitae! Cumque.
+        </p>
+        <p><a href="#bereich_2">Bereich 2</a></p>
+    </div>
+</div>
+<script>
+function ellipsizeTextBox(el) {
+    var wordArray = el.innerHTML.split(' ');
+    while(el.scrollHeight > el.offsetHeight) {
+        wordArray.pop();
+        el.innerHTML = wordArray.join(' ') + '...';
+    }
+}
+
+const texts = document.getElementsByClassName('card__text');
+
+Array.prototype.forEach.call(texts, (text) => {
+    ellipsizeTextBox(text)
+})
+
+</script>
+</body>
+</html>
