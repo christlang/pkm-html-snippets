@@ -105,12 +105,12 @@
 
 
 <dialog id="dialog_2" class="dialog">
-
-    <div class="modal-content">
-        <button autofocus>Close</button>
-        <p>small</p>
+    <div class="modal-padding">
+        <div class="modal-content">
+            <button autofocus>Close</button>
+            <p>small</p>
+        </div>
     </div>
-
 </dialog>
 <button id="dialog_2_button" aria-expanded="false" aria-controls="dialog_2" aria-haspopup="dialog">Show small dialog</button>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi architecto commodi distinctio, esse fuga id ipsum
@@ -141,12 +141,24 @@
 
 <script>
 
+    function getElement(selector) {
+        const element = document.querySelector(selector);
+
+        if (element === undefined || element === null) {
+            console.error(`not found '${selector}'`);
+        }
+
+        return element;
+    }
+
     function connectDialog(id) {
-        const dialog = document.querySelector(id);
-        const showButton = document.querySelector(`${id} + button`);
-        const closeButton = document.querySelector(`${id} button`);
-        const padding = document.querySelector(`${id} .modal-padding`);
-        const body = document.querySelector('body');
+        const idSelector = `#${id}`
+        const dialog = getElement(idSelector);
+
+        const showButton = getElement(`[aria-controls=${id}]`);
+        const closeButton = getElement(`${idSelector} button`);
+        const padding = getElement(`${idSelector} .modal-padding`);
+        const body = getElement('body');
 
         showButton.addEventListener("click", () => {
             dialog.showModal();
@@ -170,8 +182,8 @@
         })
     }
 
-    connectDialog('#dialog_1');
-    connectDialog('#dialog_2');
+    connectDialog('dialog_1');
+    connectDialog('dialog_2');
 
 
 </script>
