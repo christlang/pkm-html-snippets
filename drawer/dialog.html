@@ -97,7 +97,7 @@
         </div>
     </div>
 </dialog>
-<button id="dialog_1_button">Show the dialog</button>
+<button id="dialog_1_button" aria-expanded="false" aria-controls="dialog_1" aria-haspopup="dialog">Show the dialog</button>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi architecto commodi distinctio, esse fuga id ipsum
     modi nemo quo repudiandae rerum saepe veritatis, voluptas. Eveniet molestias odio praesentium rem voluptatibus.</p>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi architecto commodi distinctio, esse fuga id ipsum
@@ -112,7 +112,7 @@
     </div>
 
 </dialog>
-<button id="dialog_2_button">Show small dialog</button>
+<button id="dialog_2_button" aria-expanded="false" aria-controls="dialog_2" aria-haspopup="dialog">Show small dialog</button>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi architecto commodi distinctio, esse fuga id ipsum
     modi nemo quo repudiandae rerum saepe veritatis, voluptas. Eveniet molestias odio praesentium rem voluptatibus.</p>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi architecto commodi distinctio, esse fuga id ipsum
@@ -148,19 +148,19 @@
         const padding = document.querySelector(`${id} .modal-padding`);
         const body = document.querySelector('body');
 
-        // "Show the dialog" button opens the dialog modally
         showButton.addEventListener("click", () => {
             dialog.showModal();
             body.classList.add('modal-open')
+            showButton.ariaExpanded = "true";
         });
 
-        // "Close" button closes the dialog
         closeButton.addEventListener("click", () => {
             dialog.close();
         });
 
         dialog.addEventListener("close", (e) => {
             body.classList.remove('modal-open')
+            showButton.ariaExpanded = "false";
         });
 
         padding.addEventListener('click', (e) => {
