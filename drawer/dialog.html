@@ -131,6 +131,7 @@
         const dialog = document.querySelector(id);
         const showButton = document.querySelector(`${id} + button`);
         const closeButton = document.querySelector(`${id} button`);
+        const padding = document.querySelector(`${id} .modal-padding`);
         const body = document.querySelector('body');
 
         // "Show the dialog" button opens the dialog modally
@@ -147,6 +148,12 @@
         dialog.addEventListener("close", (e) => {
             body.classList.remove('modal-open')
         });
+
+        padding.addEventListener('click', (e) => {
+            if (e.target === padding) {
+                dialog.close();
+            }
+        })
     }
 
     connectDialog('#dialog_1');
