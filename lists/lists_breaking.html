@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lists</title>
+
+    <style>
+        .list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            max-height: 7rem;
+            flex-wrap: wrap;
+            column-gap: 2rem;
+        }
+        .row {
+            display: flex;
+            gap: 2rem;
+            flex-direction: row;
+            flex-wrap: wrap;
+            background-color: lightgrey;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    Listen die automatisch umbrechen.
+</div>
+<div>
+    <p>
+        bricht nach 6 elementen um
+    </p>
+    <div class="row">
+        <div>
+            <p>Liste 1</p>
+            <ul class="list">
+                <li>eins und langer text</li>
+                <li>zwei</li>
+                <li>drei</li>
+                <li>vier</li>
+                <li>fünf</li>
+            </ul>
+        </div>
+        <div>
+            <p>Liste 2</p>
+            <ul class="list">
+                <li>eins</li>
+                <li>zwei</li>
+                <li>drei</li>
+                <li>vier</li>
+                <li>fünf</li>
+                <li>sechs</li>
+                <li>sieben</li>
+            </ul>
+        </div>
+        <div>
+            <p>Liste 3</p>
+            <ul class="list">
+                <li>eins</li>
+                <li>zwei</li>
+                <li>drei</li>
+                <li>vier</li>
+                <li>fünf</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>
